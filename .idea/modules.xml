@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Guide Micro Service/Guide Micro Service.iml" filepath="$PROJECT_DIR$/Guide Micro Service/Guide Micro Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/User Micro Service/User Micro Service.iml" filepath="$PROJECT_DIR$/User Micro Service/User Micro Service.iml" />
+    </modules>
+  </component>
+</project>
