@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Authentication Micro Service" />
     <file type="web" url="file://$PROJECT_DIR$/Guide Micro Service" />
     <file type="web" url="file://$PROJECT_DIR$/Hotel Micro Service" />
+    <file type="web" url="file://$PROJECT_DIR$/Travel Micro Service" />
     <file type="web" url="file://$PROJECT_DIR$/Travel Package Micro Service" />
     <file type="web" url="file://$PROJECT_DIR$/User Micro Service" />
     <file type="web" url="file://$PROJECT_DIR$/Vehicle Micro Service" />
@@ -16,6 +18,8 @@
         <option value="$PROJECT_DIR$/Hotel Micro Service/Vehicle Micro Service/pom.xml" />
         <option value="$PROJECT_DIR$/Vehicle Micro Service/pom.xml" />
         <option value="$PROJECT_DIR$/Travel Package Micro Service/pom.xml" />
+        <option value="$PROJECT_DIR$/Travel Micro Service/pom.xml" />
+        <option value="$PROJECT_DIR$/Authentication Micro Service/pom.xml" />
       </list>
     </option>
   </component>
