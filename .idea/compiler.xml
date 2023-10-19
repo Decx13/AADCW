@@ -9,11 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Guide Micro Service" />
         <module name="Vehicle Micro Service" />
-        <module name="Travel Package Micro Service" />
         <module name="User Micro Service" />
         <module name="Hotel_Micro_Service" />
         <module name="Authentication Micro Service" />
-        <module name="Travel Micro Service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
