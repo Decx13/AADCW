@@ -11,9 +11,8 @@ import java.util.List;
 
 public interface UserService extends UserDetailsService {
     UserDTO searchUserByEmail(String email) throws UserNotFoundException;
-    void  updateUser(UserDTO email) throws UpdateFailException;
+    void updateUser(UserDTO email) throws UpdateFailException;
     int addUsers(UserDTO email) throws CreateFailException;
     void deleteUser(String email) throws DeleteFailException;
-
     List<UserDTO> getAll(String email) throws UserNotFoundException;
 }

@@ -2,14 +2,12 @@ package lk.ijse.gdse63.travelcw.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-@Data
 @AllArgsConstructor
-
+@Data
 public class UserDTO {
     private int id;
     private String username;
@@ -25,14 +23,13 @@ public class UserDTO {
     private String remarks;
     private String profilePic;
 
-    private byte[] profilePicByte;
+    private byte []profilePicByte;
     private byte[] nicFrontByte;
     private byte[] nicRearByte;
 
-
-
     public UserDTO(){
-        this.roles = new ArrayList<>();
+        roles = new ArrayList<>();
         roles.add("user");
     }
+
 }
