@@ -1,6 +1,5 @@
 package com.example.lk.ijse.gdse63.travelcw.api;
 
-
 import com.example.lk.ijse.gdse63.travelcw.config.JwtUtil;
 import com.example.lk.ijse.gdse63.travelcw.dto.AdminDTO;
 import com.example.lk.ijse.gdse63.travelcw.dto.ErrorResponse;
@@ -17,45 +16,42 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-
 @Controller
 @RequestMapping("/api/v1/login")
+@CrossOrigin
 public class AuthController {
 
     private final AuthenticationManager authenticationManager;
     @Autowired
     private AdminService adminServiceImpl;
-
     private JwtUtil jwtUtil;
-
-    public AuthController(AuthenticationManager authenticationManager, JwtUtil jwtUtil,AdminService adminService){
+    public AuthController(AuthenticationManager authenticationManager, JwtUtil jwtUtil) {
         this.authenticationManager = authenticationManager;
         this.jwtUtil = jwtUtil;
-        this.adminServiceImpl=adminService;
+
     }
 
     @ResponseBody
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity login(@RequestBody LoginRequest loginRequest){
-
+    public ResponseEntity login(@RequestBody LoginRequest loginReq)  {
         try {
-            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
+            Authentication authentication =
+                    authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginReq.getEmail(), loginReq.getPassword()));
             String email = authentication.getName();
-            AdminDTO user = new AdminDTO();
-            user.setEmail((loginRequest.getEmail()));
-            user.setPassword((loginRequest.getPassword()));
+            AdminDTO user = adminServiceImpl.searchUser(email);
             String token = jwtUtil.createToken(user);
-            LoginResponse loginResponse = new LoginResponse(email,token);
+            LoginResponse loginRes = new LoginResponse(email,token);
+            return ResponseEntity.ok(loginRes);
 
-            return ResponseEntity.ok(loginResponse);
         }catch (BadCredentialsException e){
-            ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST, "Invalid UserName or Password");
+            ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST,"Invalid username or password");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
         }catch (Exception e){
-            ErrorResponse errorResponse= new ErrorResponse(HttpStatus.BAD_REQUEST,e.getMessage());
+            ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
         }
     }
+
     @GetMapping("/{email}")
     public ResponseEntity getUser(@PathVariable String email){
         return ResponseEntity.ok(adminServiceImpl.searchUser(email));

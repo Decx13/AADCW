@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,5 +14,6 @@ public class AdminDTO {
     private String username;
     private String password;
     private String email;
-    private String type;
+    private ArrayList<String> type;
 }
+

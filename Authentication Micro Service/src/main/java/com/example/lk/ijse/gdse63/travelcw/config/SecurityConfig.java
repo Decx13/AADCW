@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -16,25 +17,26 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig {
+public class SecurityConfig  {
     @Autowired
     private JwtAuthorizationFilter jwtAuthorizationFilter;
-
     private final AdminService adminService;
 
-    public SecurityConfig(AdminService adminService){
+    public SecurityConfig(AdminService adminService) {
         this.adminService = adminService;
+
     }
     @Bean
-    public AuthenticationManager authenticationManager(HttpSecurity http , NoOpPasswordEncoder noOpPasswordEncoder)throws Exception{
+    public AuthenticationManager authenticationManager(HttpSecurity http, NoOpPasswordEncoder noOpPasswordEncoder)
+            throws Exception {
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder.userDetailsService(adminService).passwordEncoder(noOpPasswordEncoder);
         return authenticationManagerBuilder.build();
     }
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http)throws Exception{
 
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
                 .requestMatchers("/api/v1/login/**").permitAll()
@@ -45,9 +47,11 @@ public class SecurityConfig {
         return http.build();
     }
 
+
+    @SuppressWarnings("deprecation")
     @Bean
-    public NoOpPasswordEncoder passwordEncoder(){
+    public NoOpPasswordEncoder passwordEncoder() {
         return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
     }
-}
 
+}
