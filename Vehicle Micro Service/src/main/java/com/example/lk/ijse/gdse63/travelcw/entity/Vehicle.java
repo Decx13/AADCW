@@ -1,20 +1,23 @@
-package com.example.lk.ijse.gdse63.travelcw.dto;
+package com.example.lk.ijse.gdse63.travelcw.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class VehicleDTO {
+public class Vehicle {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String fuelType;
     private boolean isHybrid;
-    private ArrayList<byte[]> images;
+    @Column(columnDefinition = "TEXT")
+    private String images;
     private double priceFor1Km;
     private double fuelUsage;
     private double priceFor100Km;
@@ -23,5 +26,6 @@ public class VehicleDTO {
     private String category;
     private String transmission;
 
-    private DriverDTO driverDTO;
+    @OneToOne(cascade = CascadeType.REMOVE)
+    private Driver driver;
 }

@@ -23,7 +23,7 @@
       <module name="Travel Micro Service" target="17" />
       <module name="Travel Package Micro Service" target="17" />
       <module name="User Micro Service" target="7" />
-      <module name="Vehicle Micro Service" target="1.6" />
+      <module name="Vehicle Micro Service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

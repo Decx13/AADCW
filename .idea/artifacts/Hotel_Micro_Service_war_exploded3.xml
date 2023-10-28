@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Vehicle Micro Service:war exploded">
-    <output-path>$PROJECT_DIR$/Vehicle Micro Service/target/vehicle_micro_service-0.0.1-SNAPSHOT</output-path>
+  <artifact type="exploded-war" name="Hotel Micro Service:war exploded">
+    <output-path>$PROJECT_DIR$/Hotel Micro Service/target/hotel_micro_service-0.0.1-SNAPSHOT</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>Vehicle Micro Service</module>
+        <module>Hotel Micro Service</module>
         <packaging>war</packaging>
         <unpackNestedArchives>false</unpackNestedArchives>
       </options>
@@ -12,7 +12,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Vehicle Micro Service" />
+          <element id="module-output" name="Hotel Micro Service" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:3.1.4" />
@@ -44,7 +44,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:6.0.12" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:2.0.9" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aspects:6.0.12" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-security:3.1.4" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:3.1.4" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter:3.1.4" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:3.1.4" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.1.4" />
@@ -55,11 +55,6 @@
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.20.0" />
           <element id="library" level="project" name="Maven: org.slf4j:jul-to-slf4j:2.0.9" />
           <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.33" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-aop:6.0.12" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:6.1.4" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:6.1.4" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-expression:6.0.12" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:3.1.4" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-json:3.1.4" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.2" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2" />
@@ -68,27 +63,33 @@
           <element id="library" level="project" name="Maven: io.micrometer:micrometer-observation:1.11.4" />
           <element id="library" level="project" name="Maven: io.micrometer:micrometer-commons:1.11.4" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:6.0.12" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:6.0.12" />
           <element id="library" level="project" name="Maven: com.mysql:mysql-connector-j:8.0.33" />
           <element id="library" level="project" name="Maven: jakarta.annotation:jakarta.annotation-api:2.1.1" />
           <element id="library" level="project" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:4.0.1" />
           <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:2.1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:6.0.12" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:6.0.12" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-security:3.1.4" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:6.0.12" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:6.1.4" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:6.1.4" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-crypto:6.1.4" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:6.1.4" />
           <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt:0.9.1" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.15.2" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.15.2" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.15.2" />
           <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.0" />
-          <element id="library" level="project" name="Maven: org.modelmapper:modelmapper:3.0.0" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.30" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.10.1" />
+          <element id="library" level="project" name="Maven: org.modelmapper:modelmapper:3.0.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/Vehicle Micro Service/target/vehicle_micro_service-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/Hotel Micro Service/target/hotel_micro_service-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Vehicle Micro Service/web/Web" />
+      <element id="javaee-facet-resources" facet="Hotel Micro Service/web/Web" />
     </root>
   </artifact>
 </component>
