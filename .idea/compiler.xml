@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Hotel Micro Service" />
+        <module name="Travelp Micro Service" />
         <module name="Guide Micro Service" />
         <module name="Vehicle Micro Service" />
         <module name="Authentication Micro Service" />
@@ -22,6 +23,7 @@
       <module name="Hotel_Micro_Service" target="17" />
       <module name="Travel Micro Service" target="17" />
       <module name="Travel Package Micro Service" target="17" />
+      <module name="Travelp Micro Service" target="17" />
       <module name="User Micro Service" target="7" />
       <module name="Vehicle Micro Service" target="17" />
     </bytecodeTargetLevel>
@@ -35,6 +37,7 @@
       <module name="Hotel_Micro_Service" options="-parameters" />
       <module name="Travel Micro Service" options="-parameters" />
       <module name="Travel Package Micro Service" options="-parameters" />
+      <module name="Travelp Micro Service" options="-parameters" />
       <module name="User Micro Service" options="-parameters" />
       <module name="Vehicle Micro Service" options="-parameters" />
     </option>
