@@ -8,6 +8,7 @@
     <file type="web" url="file://$PROJECT_DIR$/Travel Package Micro Service" />
     <file type="web" url="file://$PROJECT_DIR$/Travelp Micro Service" />
     <file type="web" url="file://$PROJECT_DIR$/User Micro Service" />
+    <file type="web" url="file://$PROJECT_DIR$/User Travelp Micro Service" />
     <file type="web" url="file://$PROJECT_DIR$/Vehicle Micro Service" />
   </component>
   <component name="MavenProjectsManager">
@@ -20,6 +21,7 @@
         <option value="$PROJECT_DIR$/Vehicle Micro Service/pom.xml" />
         <option value="$PROJECT_DIR$/Authentication Micro Service/pom.xml" />
         <option value="$PROJECT_DIR$/Travelp Micro Service/pom.xml" />
+        <option value="$PROJECT_DIR$/User Travelp Micro Service/pom.xml" />
       </list>
     </option>
   </component>

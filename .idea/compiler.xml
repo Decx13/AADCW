@@ -7,12 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Hotel Micro Service" />
         <module name="Travelp Micro Service" />
         <module name="Guide Micro Service" />
         <module name="Vehicle Micro Service" />
-        <module name="Authentication Micro Service" />
         <module name="User Micro Service" />
+        <module name="Hotel Micro Service" />
+        <module name="Authentication Micro Service" />
+        <module name="User Travelp Micro Service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,6 +26,7 @@
       <module name="Travel Package Micro Service" target="17" />
       <module name="Travelp Micro Service" target="17" />
       <module name="User Micro Service" target="7" />
+      <module name="User Travelp Micro Service" target="7" />
       <module name="Vehicle Micro Service" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -39,6 +41,7 @@
       <module name="Travel Package Micro Service" options="-parameters" />
       <module name="Travelp Micro Service" options="-parameters" />
       <module name="User Micro Service" options="-parameters" />
+      <module name="User Travelp Micro Service" options="-parameters" />
       <module name="Vehicle Micro Service" options="-parameters" />
     </option>
   </component>
