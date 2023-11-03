@@ -1,6 +1,7 @@
 package com.example.lk.ijse.gdse63.travelcw.service.impl;
 
 import com.example.lk.ijse.gdse63.travelcw.dto.HotelDTO;
+import com.example.lk.ijse.gdse63.travelcw.dto.PricesDTO;
 import com.example.lk.ijse.gdse63.travelcw.entity.Hotel;
 import com.example.lk.ijse.gdse63.travelcw.exception.DeleteFailException;
 import com.example.lk.ijse.gdse63.travelcw.exception.NotFoundException;
@@ -10,7 +11,6 @@ import com.example.lk.ijse.gdse63.travelcw.repo.HotelRepo;
 import com.example.lk.ijse.gdse63.travelcw.service.HotelService;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -89,6 +89,7 @@ public class HotelServiceIMPL implements HotelService {
             if (byId.isPresent()){
                 HotelDTO hotel = modelMapper.map(byId.get(), HotelDTO.class);
                 importImages(hotel,byId.get());
+                setData(hotel,byId.get());
                 return hotel;
             }else {
                 throw new NotFoundException("Hotel Not Found");
@@ -97,6 +98,14 @@ public class HotelServiceIMPL implements HotelService {
             throw new NotFoundException("Error Occurred :(",e);
         }
     }
+
+    private void setData(HotelDTO hotelDTO, Hotel hotel) {
+        hotelDTO.setPhone(gson.fromJson(hotel.getPhone(), new TypeToken<ArrayList<String>>() {
+        }.getType()));
+        hotelDTO.setPrices(gson.fromJson(hotel.getPrices(), new TypeToken<ArrayList<PricesDTO>>() {
+        }.getType()));
+    }
+
 
     @Override
     public List<HotelDTO> findByStarRate(int id) throws NotFoundException {

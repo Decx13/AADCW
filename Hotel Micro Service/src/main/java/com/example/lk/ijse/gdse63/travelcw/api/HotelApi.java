@@ -8,18 +8,17 @@ import com.example.lk.ijse.gdse63.travelcw.exception.SaveFailException;
 import com.example.lk.ijse.gdse63.travelcw.exception.UpdateFailException;
 import com.example.lk.ijse.gdse63.travelcw.service.HotelService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/hotel")
+@CrossOrigin
 public class HotelApi {
 
     private HotelService hotelService;
@@ -41,7 +40,7 @@ public class HotelApi {
     @PostMapping()
     public ResponseEntity uploadFiles(@RequestParam("files") ArrayList<MultipartFile> files,
                                       @RequestParam("name") String name,
-                                      @RequestParam("category") String category,
+                                      @RequestParam(name = "category",required = false) String category,
                                       @RequestParam("petAllowed") boolean petAllowed,
                                       @RequestParam("mapLink") String mapLink,
                                       @RequestParam("address") String address,
@@ -85,17 +84,17 @@ public class HotelApi {
 
     @PutMapping("/{id:\\d+}")
     public ResponseEntity update(@PathVariable int id,
-                                 @RequestParam("files") ArrayList<MultipartFile> files,
-                                 @RequestParam("name") String name,
-                                 @RequestParam("category") String category,
-                                 @RequestParam("star") int star,
-                                 @RequestParam("petAllowed") boolean petAllowed,
-                                 @RequestParam("mapLink") String mapLink,
-                                 @RequestParam("address") String address,
-                                 @RequestParam("phone") ArrayList<String> phone,
-                                 @RequestParam("email") String email,
-                                 @RequestParam("prices") ArrayList<PricesDTO> prices,
-                                 @RequestParam("remarks") String remarks){
+                       @RequestParam("files") ArrayList<MultipartFile> files,
+                       @RequestParam("name") String name,
+                       @RequestParam("category") String category,
+                       @RequestParam("star") int star,
+                       @RequestParam("petAllowed") boolean petAllowed,
+                       @RequestParam("mapLink") String mapLink,
+                       @RequestParam("address") String address,
+                       @RequestParam("phone") ArrayList<String> phone,
+                       @RequestParam("email") String email,
+                       @RequestParam("prices") ArrayList<PricesDTO> prices,
+                       @RequestParam("remarks") String remarks){
         HotelDTO hotelDTO = new HotelDTO();
         ArrayList<byte[]> bytes = new ArrayList<>();
         files.forEach(file -> {
